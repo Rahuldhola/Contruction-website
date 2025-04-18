@@ -1,0 +1,19 @@
+.appli
+{
+    justify-content: center;
+    padding: 30px;
+    border: 2px solid black;
+}
+.appli button
+{
+    padding: 10px;
+    display: block;
+    background-color: blue;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.appli button a
+{
+    text-decoration: none;
+    justify-content: space-around;
+}

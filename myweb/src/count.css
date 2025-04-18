@@ -1,0 +1,41 @@
+/* CSS File - CountingEffect.css */
+
+/* Style the container */
+.counter-container {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Vertically align items */
+    gap: 30px; /* Add some space between the items */
+    margin-top: 50px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  }
+  
+  /* Styling for each counter item */
+  .counter-item {
+    text-align: center;
+    flex: 1 1 200px; /* Allow counter items to grow and shrink, with a minimum width */
+    min-width: 200px; /* Ensure that counter items don't shrink too much */
+  }
+  
+  .counter h2 {
+    font-size: 3rem;
+    color: #4caf50;
+    font-weight: bold;
+  }
+  
+  .counter p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  /* For mobile responsiveness */
+  @media only screen and (max-width: 768px) {
+    .counter h2 {
+      font-size: 2rem;
+    }
+  
+    .counter p {
+      font-size: 1rem;
+    }
+  }
+  

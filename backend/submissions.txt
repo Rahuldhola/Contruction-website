@@ -1,0 +1,181 @@
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: marketing
+
+Name: Sanket dhandhlya
+Phone: 9913521777
+Email: Sanketm710@gmail.com
+Job Role: productManager
+
+Name: rthj
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: sales
+
+Name: rahul
+Phone: 1234567890
+Email: rahul@gmmail.com
+Job Role: productManager
+
+Name: werty
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: developer
+
+Name: kdfvyd
+Phone: 568486454
+Email: qtsqt@gmail.com
+Job Role: developer
+
+Name: rahul 
+Phone: 1234567890
+Email: rahu@gail.com
+Job Role: sales
+
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: designer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: marketing
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: John Doe
+Phone: 123-456-7890
+Email: john.doe@example.com
+Job Role: Developer
+
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: sales
+
+Name: rahul
+Phone: 9913521555
+Email: rahul@gmail.com
+Job Role: developer
+
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: developer
+
+Name: rahul
+Phone: 1234567876
+Email: rahul@gmail.com
+Job Role: hr
+Message: hello there
+Resume: uploads\1744092643469.pdf
+
+Name: Sanket dhandhlya
+Phone: 1234567890
+Email: Sanketm710@gmail.com
+Job Role: designer
+Message: gjjy
+Resume: uploads\1744094155023.pdf
+
+Name: rahul 
+Phone: 321655449870
+Email: klj@gmail.com
+Job Role: designer
+Message: helllo
+Resume: uploads\1744341165453.pdf
+
+Name: Dhola Rahul
+Phone: 1234567890
+Email: vasaniaryan2@gmail.com
+Job Role: developer
+Message: 234ygfewscvbhn vcd
+Resume: uploads\1744357831093.pdf
+
+Name: Dhola Rahul
+Phone: 1234567890
+Email: aryanmvasani@gmail.com
+Job Role: marketing
+Message: qwerfgvc
+Resume: uploads\1744370407320.pdf
+
+Name: Rahul Dhola
+Phone: 2345678901
+Email: eee@gmail.com
+Job Role: developer
+Message: ffffff
+Resume: No resume uploaded
+
+Name: Rahul Dhola
+Phone: 1234567890
+Email: qqq@gmail.com
+Job Role: designer
+Message: hiiii
+Resume: uploads\1744698759260.pdf
+
+
+Name: tech
+Phone: 1234567890
+Email: rahuldhola22@gmail.com
+Job Role: Site Engineer
+Message: guguu
+Resume: uploads\1744787978691.pdf
+
+Name: Dhola Rahul
+Phone: 1234567890
+Email: hihih@gmail.com
+Job Role: Site Engineer
+Message: iiii
+Resume: uploads\1744953391946.pdf
+
+Name: rahul
+Phone: 1234567890
+Email: sanketm710@gmail.com
+Job Role: Site Engineer
+Message: jiji
+Resume: uploads\1744953440074.pdf
+

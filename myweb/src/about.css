@@ -1,0 +1,250 @@
+.about-container {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+}
+
+/* Container for multiple logos */
+.multiple-floating-logos {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* Base logo style */
+.floating-logo {
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Keyframe for floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Optional: Add different delays for a staggered effect */
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2d2b50;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.about-content p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #e26733;
+}
+
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 10px;
+  
+    border-radius: 5px; /* Rounded corners for the text box */
+    max-width: 100%;
+  }
+  /* .overlay1 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    padding: 10px;
+  
+    border-radius: 5px; /* Rounded corners for the text box */
+  /* max-width: 80%; */
+  /* / */
+  
+  /* Contact.css */
+  
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .contect-div {
+    position: relative;
+    background-color: #ffffff;
+    padding: 60px 20px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .contect-div:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Overlapping image style */
+  .contect-div img {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    background-color: #fff;
+  }
+  
+  .contect-div h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .contect-div a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contect-div a:hover {
+    text-decoration: underline;
+  }
+
+  
+
+  .image-containerss {
+    position: relative;
+    display: flex;
+    width: 100%;
+    /* max-width: 1000px; */
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .image-containers {
+    position: relative;
+    width: 100%;
+    /* max-width: 1000px; */
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loge-img {
+    width: 500px;
+    height: 600px;
+  }
+  
+.title
+{
+  text-align: center;
+  color: #ea5c1f;
+}
+
+
+  .overlay1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .overlay1 h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .overlay1 p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .overlay1 a {
+    color: #4caf50; /* Email link color */
+    text-decoration: none;
+  }
+  
+  .overlay1 a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile responsiveness */
+  @media only screen and (max-width: 768px) {
+    .overlay1 h1 {
+      font-size: 2rem;
+      /* color: black; */
+    }
+  
+    .overlay1 p {
+      font-size: 1rem;
+      /* color: black; */
+    }
+  
+    .image-containers {
+      height: 250px;
+    }
+    .image-containerss {
+      height: 400px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .overlay1 h1 {
+      font-size: 1.8rem;
+    }
+  
+    .overlay1 p {
+      font-size: 0.9rem;
+    }
+  
+    .image-containers {
+      height: 200px;
+    }
+  }
+  

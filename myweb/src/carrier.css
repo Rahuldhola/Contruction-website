@@ -1,0 +1,93 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Container for the form */
+  .career-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Title */
+  .h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Description under the title */
+  .career-description {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Form styling */
+  .career-form {
+    margin-top: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Label styling */
+  label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* Input fields and select dropdown */
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Submit button styling */
+  .submit-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Make the button take up full width of its container */
+    max-width: 50%; /* Set the maximum width to 50% of the container */
+    display: block; /* Makes the button a block element (so it can be centered) */
+    margin: 0 auto; /* Centers the button horizontally */
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the message textarea */
+  textarea {
+    width: 100%; /* Make it take the full width of the container */
+    padding: 10px; /* Add padding for better readability */
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 4px; /* Round the corners */
+    font-size: 16px; /* Set font size */
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  textarea:focus {
+    border-color: #007bff; /* Add focus style to the textarea */
+  }
+  

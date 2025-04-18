@@ -1,0 +1,186 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7a90b4,;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #7a90b4;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+  .navbar {
+    position: fixed;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navbar.transparent {
+    background-color: transparent;
+  }
+  
+  .navbar.scrolled {
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2, #7a90b4, #2c3e50);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .logg {
+    display: flex;
+    /* padding: 20px; */
+  }
+  
+  .log {
+    color: white;
+    font-size: 22px;
+    margin: 5;
+    padding: 14px;
+    
+  }
+  .log-img {
+    width: auto; /* Adjust the size of the logo image */
+    height: auto; /* Maintain aspect ratio */
+    /* margin-right: 10px; */
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+    padding: 5px;
+    bottom: 5px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu ul li {
+    margin: 0 15px;
+  }
+  
+  .menu ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    font-family: "Orbitron";
+  }
+  
+  .menu ul li a:hover {
+    color: #4caf50; /* Highlight on hover */
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      width: 100%;
+      display: none; /* Hide menu by default */
+    }
+  
+    .menu.active {
+      display: block; /* Show menu when active */
+    }
+  
+    .menu ul {
+      width: 100%;
+      padding-left: 0;
+      margin: 0;
+    }
+  
+    .menu ul li {
+      width: 100%;
+      text-align: left;
+      /* padding: 10px 20px; */
+      border-bottom: 1px solid #444;
+    }
+  
+    .menu-button {
+      display: block;
+      background-color: #444;
+      padding: 10px;
+      color: white;
+      border: none;
+      text-align: left;
+      font-size: 18px;
+    }
+  
+    .menu-button:focus {
+      outline: none;
+    }
+  
+    .menu ul li a {
+      padding: 10px 0;
+    }
+  
+    .menu ul li a:hover {
+      background-color: #444;
+    }
+  }
+  
+  /* Desktop View */
+  @media (min-width: 769px) {
+    .menu ul {
+      display: flex;
+    }
+  
+    .menu ul li {
+      padding: 0 15px;
+    }
+  
+    .menu-button {
+      display: none; /* Hide the menu button on desktop */
+    }
+  }
+  
