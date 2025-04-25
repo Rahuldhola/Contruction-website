@@ -21,7 +21,7 @@ function Home() {
           observer.unobserve(entry.target); // Stop observing once visible
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0 }
     );
 
     const gallery = galleryRef.current;

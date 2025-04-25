@@ -179,3 +179,28 @@ Job Role: Site Engineer
 Message: jiji
 Resume: uploads\1744953440074.pdf
 
+Name: Dhola Rahul
+Phone: 1234567890
+Email: aryanmvasani@gmail.com
+Job Role: sales
+Message: qqasdd
+Resume: uploads\1744979491806.pdf
+
+Date: 18/4/2025
+Time: 6:02:45 pm
+Name: Rahul Dhola
+Phone: 1234567890
+Email: rahuldhola22@gmail.com
+Job Role: Civil Supervisor
+Message: sdfgdwdfgbfddf
+Resume: uploads\1744979565504.pdf
+
+Date: 19/4/2025
+Time: 5:02:32 pm
+Name: Rahul Dhola
+Phone: 9879838861
+Email: rahuldhola22@gmail.com
+Job Role: Civil Supervisor
+Message: hello
+Resume: uploads\1745062352361.pdf
+
