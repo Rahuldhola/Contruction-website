@@ -204,3 +204,21 @@ Job Role: Civil Supervisor
 Message: hello
 Resume: uploads\1745062352361.pdf
 
+Date: 3/6/2025
+Time: 12:29:06 pm
+Name: Dhola Rahul
+Phone: 1234567890
+Email: hihih@gmail.com
+Job Role: Civil Supervisor
+Message: www
+Resume: uploads\1748933946758.docx
+
+Date: 5/6/2025
+Time: 11:34:15 am
+Name: rahul
+Phone: 9879838861
+Email: rahul@gmail.com
+Job Role: Site Engineer
+Message: hello
+Resume: uploads\1749103455477.pdf
+

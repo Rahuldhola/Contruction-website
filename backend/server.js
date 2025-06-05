@@ -1,90 +1,106 @@
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// const fs = require("fs");
-// const path = require("path");
-// const cors = require("cors");
-// const multer = require("multer");
-
-// // Set up multer storage options
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     // Specify the directory where the file will be stored
-//     cb(null, "uploads/");
-//   },
-//   filename: function (req, file, cb) {
-//     // Rename the file to avoid conflicts
-//     cb(null, Date.now() + path.extname(file.originalname));
-//   },
-// });
-
-// const upload = multer({ storage: storage });
-
-// const app = express();
-
-// // Enable CORS for frontend communication
-// app.use(cors());
-
-// // Middleware to parse JSON data
-// app.use(bodyParser.json());
-
-// // Create the uploads directory if it doesn't exist
-// if (!fs.existsSync("uploads")) {
-//   fs.mkdirSync("uploads");
-// }
-
-// // Route to handle form submission (including file upload)
-// app.post("/submit-form", upload.single("resume"), (req, res) => {
-//   // Log the incoming form data (including file)
-//   console.log("Received form data:", req.body);
-//   console.log("Uploaded file:", req.file);
-
-//   const { name, phone, email, jobRole, message } = req.body;
-
-//   // Check if 'message' is provided
-//   if (!message) {
-//     return res.status(400).json({ message: "Message field is required!" });
-//   }
-
-//   // Create a string with the form data (including the message and file path)
-//   const formData = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nJob Role: ${jobRole}\nMessage: ${message}\nResume: ${
-//     req.file ? req.file.path : "No resume uploaded"
-//   }\n\n`;
-
-//   // Define the file path for 'submissions.txt'
-//   const filePath = path.join(__dirname, "submissions.txt");
-
-//   // Append form data to the text file
-//   fs.appendFile(filePath, formData, (err) => {
-//     if (err) {
-//       console.error("Error writing to file:", err); // Log any errors writing to the file
-//       return res.status(500).json({ message: "Failed to save data" });
-//     }
-
-//     console.log("Data saved to file successfully!"); // Log successful file write
-//     res.status(200).json({ message: "Form submitted successfully" });
-//   });
-// });
-
-// // Start the server on port 5000
-// app.listen(5000, () => {
-//   console.log("Server is running on port 5000");
-// });
-
 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
-const authRoutes = require("./routes/authroutes");
-const applicationRoutes = require("./routes/applicationroutes");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+const bcrypt = require("bcrypt");
+const User = require("./models/User"); // User model
+const Application = require("./models/Application"); // Application model
 
 const app = express();
+
+// ===== Middleware =====
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use("/uploads", express.static("uploads")); // Serve uploaded resumes
 
-mongoose.connect("mongodb://localhost:27017/jobPortal");
+// ===== MongoDB Connection =====
+mongoose
+  .connect("mongodb://localhost:27017/jobPortal", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-app.use("/api/auth", authRoutes);
-app.use("/api/application", applicationRoutes);
+// ===== Create uploads folder if it doesn't exist =====
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// ===== Multer setup =====
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) =>
+    cb(null, Date.now() + path.extname(file.originalname)),
+});
+const upload = multer({ storage });
+
+// ===== Routes =====
+
+// Signup
+app.post("/signup", async (req, res) => {
+  const { username, email, password } = req.body;
+  try {
+    const existing = await User.findOne({ email });
+    if (existing) return res.status(400).json({ message: "Email already registered" });
+
+    const hashed = await bcrypt.hash(password, 10);
+    const newUser = new User({ username, email, password: hashed });
+    await newUser.save();
+
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (err) {
+    console.error("Signup error:", err);
+    res.status(500).json({ message: "Signup failed" });
+  }
+});
+
+// Login
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return res.status(401).json({ message: "User not found" });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(401).json({ message: "Invalid password" });
+
+    res.status(200).json({ message: "Login successful" });
+  } catch (err) {
+    console.error("Login error:", err);
+    res.status(500).json({ message: "Login failed" });
+  }
+});
+
+// Submit Form with Resume Upload
+app.post("/submit-form", upload.single("resume"), async (req, res) => {
+  try {
+    const { name, phone, email, jobRole, message } = req.body;
+    if (!message) return res.status(400).json({ message: "Message is required" });
+
+    const newApp = new Application({
+      name,
+      phone,
+      email,
+      jobRole,
+      message,
+      resumePath: req.file ? req.file.path : null,
+    });
+
+    await newApp.save();
+    res.status(200).json({ message: "Form submitted successfully" });
+  } catch (err) {
+    console.error("Form submission error:", err);
+    res.status(500).json({ message: "Form submission failed" });
+  }
+});
+
+// ===== Start Server =====
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});

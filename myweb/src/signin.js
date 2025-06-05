@@ -14,13 +14,15 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", formData);
+      const res = await axios.post("http://localhost:5000/signup", formData);
       alert(res.data.message);
       navigate("/application");
 
     } catch (err) {
-      alert("Signup failed");
-    }
+  console.error("Signup error:", err.response?.data || err.message);
+  alert("Signup failed");
+}
+
   };
 
   return (
@@ -30,6 +32,7 @@ function Signup() {
         <input
           type="text"
           name="name"
+          value={formData.name}
           placeholder="Full Name"
           onChange={handleChange}
           required
@@ -37,6 +40,7 @@ function Signup() {
         <input
           type="email"
           name="email"
+          value={formData.email}
           placeholder="Email Address"
           onChange={handleChange}
           required
@@ -44,6 +48,7 @@ function Signup() {
         <input
           type="password"
           name="password"
+          value={formData.password}
           placeholder="Password"
           onChange={handleChange}
           required

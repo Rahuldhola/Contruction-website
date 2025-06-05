@@ -31,6 +31,7 @@ const Career = () => {
       resume: e.target.files[0], // Store the selected file
     });
   };
+  
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -48,7 +49,7 @@ const Career = () => {
     // Log form data to check if the message and resume are included
     console.log("Form Data to Submit:", formData);
 
-    fetch("http://localhost:5001/submit-form", {
+    fetch("http://localhost:5000/submit-form", {
       method: "POST",
       body: formDataToSend, // Send FormData (including file)
     })
@@ -63,11 +64,13 @@ const Career = () => {
           message: "",
           resume: null, // Reset resume field
         });
+        alert("submited.....")
         navigate("/opening")
       })
       .catch((error) => {
         setMessage("An error occurred. Please try again later.");
         console.error("Error:", error);
+        alert("Form not submited......??????!!!!!!")
       });
   };
   const navigate = useNavigate();
