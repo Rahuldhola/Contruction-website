@@ -1,19 +1,18 @@
-backend folder
-<br><br>
+# 🏗️ Construction Company Website
 
----->> run cammnd <br>
----->>node server1.js
-<br>
-<br>
+A modern and responsive construction company website built using the **MERN stack** (MongoDB, Express.js, React, Node.js). This web application showcases services, completed projects, and allows client application through a carrier form.
 
+## 🚀 Tech Stack
 
+- **Frontend:** React.js
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
 
+## ✨ Features
 
-myweb folder
-<br>
-<br>
-
---->>cd myweb<br>
---->>npm start
-
+- Responsive and clean UI
+- Services and projects portfolio
+- carrier form with backend handling
+- API integration between frontend and backend
+- SEO-friendly structure
 
