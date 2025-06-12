@@ -1,4 +1,3 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -7,9 +6,12 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-const User = require("./models/User"); // User model
-const Application = require("./models/Application"); // Application model
+const dotenv = require("dotenv");
 
+const User = require("./models/user");
+const Application = require("./models/application");
+
+dotenv.config();
 const app = express();
 
 // ===== Middleware =====
@@ -19,10 +21,7 @@ app.use("/uploads", express.static("uploads")); // Serve uploaded resumes
 
 // ===== MongoDB Connection =====
 mongoose
-  .connect("mongodb://localhost:27017/jobPortal", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI || "mongodb://localhost:27017/jobPortal")
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -46,7 +45,8 @@ app.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
   try {
     const existing = await User.findOne({ email });
-    if (existing) return res.status(400).json({ message: "Email already registered" });
+    if (existing)
+      return res.status(400).json({ message: "Email already registered" });
 
     const hashed = await bcrypt.hash(password, 10);
     const newUser = new User({ username, email, password: hashed });
@@ -80,7 +80,8 @@ app.post("/login", async (req, res) => {
 app.post("/submit-form", upload.single("resume"), async (req, res) => {
   try {
     const { name, phone, email, jobRole, message } = req.body;
-    if (!message) return res.status(400).json({ message: "Message is required" });
+    if (!message)
+      return res.status(400).json({ message: "Message is required" });
 
     const newApp = new Application({
       name,
@@ -100,7 +101,7 @@ app.post("/submit-form", upload.single("resume"), async (req, res) => {
 });
 
 // ===== Start Server =====
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
